@@ -1,0 +1,22 @@
+{
+  "name" : "LinkedIn Data Scrapper",
+  "manifest_version": 3,
+  "version":"3.1.2.4567",
+  "description": "LinkedIn data scrapper for getting information about the user profilename, profilePicture, Email, Contact number, LinkedIn profile link, company, designation, location, about, tags, languages, education and experiences. Also the extension will help in downloading the JSON file for that user profile.",
+  "icons": { 
+    "128": "apple-touch-icon-120x120.png" },
+  "action":{
+      "default_icon":"apple-touch-icon-120x120.png",
+      "default_popup": "index.html" 
+  },
+  "content_scripts": [
+  {
+    "matches": [
+      "<all_urls>"
+    ],
+    "js": ["content.js"]
+  }
+  ],
+  "content_security_policy": {"script-src": "unsafe-eval", "object-src": "self"},
+  "permissions": ["activeTab", "storage","scripting"]
+}
